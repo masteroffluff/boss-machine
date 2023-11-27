@@ -686,7 +686,7 @@ describe('/api/meetings routes', function() {
 
 });
 
-xdescribe('BONUS: /api/minions/:minionId/work routes', function() {
+describe('BONUS: /api/minions/:minionId/work routes', function() {
 
   let fakeDb = require('../server/db.js').db;
   
@@ -905,6 +905,7 @@ xdescribe('BONUS: /api/minions/:minionId/work routes', function() {
         return request(app)
           .delete('/api/minions/notAnId/work/notAnId')
           .expect(404);
+          
       });
   
       it('called with an invalid work ID returns a 404 error', function() {

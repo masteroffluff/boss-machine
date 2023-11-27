@@ -25,7 +25,7 @@ ideaRouter.post('/',checkMillionDollarIdea,(req, res, next) => {
     const newIdea = addToDatabase('ideas',req.body)
     if (!newIdea){
         let newIdeaError =  new Error('Idea creation failed!');
-        newIdeaError.status=403;
+        newIdeaError.status=400;
         return next(newIdeaError);
     }
     res.status(201).send(newIdea);

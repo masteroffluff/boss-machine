@@ -21,7 +21,7 @@ meetingRouter.post('/',(req, res, next) => {
     //const newMeeting = createMeeting();
     if (!newMeeting){
         let newIdeaError =  new Error('Meeting creation failed!');
-        newIdeaError.status=403;
+        newIdeaError.status=400;
         return next(newIdeaError);
     }
     res.status(201).send(newMeeting);
